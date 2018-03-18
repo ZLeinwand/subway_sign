@@ -46,7 +46,7 @@ while True:
 			times = []
 			out = ''
 
-			os.system('sudo ./rpi-rgb-led-matrix/led-matrix -r 16 -c 2 -t 5 -b 50 -D 1 -m 5000 dynamicimages/dynamictime.ppm')
+			os.system('sudo ./rpi-rgb-led-matrix/examples-api-use/demo -r 16 -c 2 -t 5 -b 50 -D 1 -m 5000 dynamicimages/dynamictime.ppm')
 	except Exception:
 		print traceback.format_exc()
 
