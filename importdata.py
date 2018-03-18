@@ -37,22 +37,22 @@ while True:
 				out+=str(time)
 				out+=str(',')
 			out = out[:-1]
-			
+
 			staticimg = Image.open('staticimages/' + stop[0] + stop[3] + '.ppm')
 			draw = ImageDraw.Draw(staticimg)
-			font = ImageFont.truetype('/usr/share/fonts/truetype/droid/DroidSans.ttf', 12)
+			font = ImageFont.truetype('/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf', 12)
 			draw.text((16, 1), out,(200,200,200),font=font)
 			staticimg.save('dynamicimages/dynamictime.ppm')
 			times = []
 			out = ''
-		
+
 			os.system('sudo ./rpi-rgb-led-matrix/led-matrix -r 16 -c 2 -t 5 -b 50 -D 1 -m 5000 dynamicimages/dynamictime.ppm')
 	except Exception:
 		print traceback.format_exc()
 
 
 
-	
+
 
 
 
