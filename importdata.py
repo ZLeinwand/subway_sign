@@ -1,9 +1,7 @@
 from PIL import Image, ImageFont, ImageDraw
 from google.transit import gtfs_realtime_pb2
-import nyct_subway_pb2
 import urllib
 import datetime
-from time import sleep
 import math
 import os
 from config import *
