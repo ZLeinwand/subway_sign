@@ -37,7 +37,7 @@ while True:
 			train_times = train_times[:-1]
 
 			# staticimg = Image.open('staticimages/' + stop[0] + stop[3] + '.ppm')
-			staticimg = Image.open('staticimages/1N.ppm')
+			staticimg = Image.open('staticimages/F-train-w-background.ppm')
 			draw = ImageDraw.Draw(staticimg)
 			font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBoldItalic.ttf', 12)
 			# font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 10)
@@ -49,11 +49,3 @@ while True:
 			os.system('sudo ./rpi-rgb-led-matrix/examples-api-use/demo --led-chain=4 -D 1 -m 5000 dynamicimages/dynamictime.ppm --led-no-hardware-pulse --led-gpio-mapping=adafruit-hat')
 	except Exception:
 		print traceback.format_exc()
-
-
-
-
-
-
-
-
