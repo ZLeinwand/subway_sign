@@ -39,7 +39,7 @@ while True:
 			# staticimg = Image.open('staticimages/' + stop[0] + stop[3] + '.ppm')
 			staticimg = Image.open('staticimages/1N.ppm')
 			draw = ImageDraw.Draw(staticimg)
-			font = ImageFont.truetype('/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf', 12)
+			font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBoldItalic.ttf', 12)
 			# font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 10)
 			draw.text((16, 1), train_times, fill=(255,255,255), font=font)
 			staticimg.save('dynamicimages/dynamictime.ppm')
