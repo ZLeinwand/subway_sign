@@ -39,7 +39,7 @@ while True:
 			# staticimg = Image.open('staticimages/' + stop[0] + stop[3] + '.ppm')
 			staticimg = Image.open('staticimages/F-train-w-background.ppm')
 			draw = ImageDraw.Draw(staticimg)
-			font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBoldItalic.ttf', 24)
+			font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBoldItalic.ttf', 18)
 			# font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 10)
 			draw.text((32, 1), train_times, fill=(255,255,255), font=font)
 			staticimg.save('dynamicimages/dynamictime.ppm')
