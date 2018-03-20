@@ -37,7 +37,7 @@ while True:
 			train_times = train_times[:-1]
 
 			# staticimg = Image.open('staticimages/' + stop[0] + stop[3] + '.ppm')
-			staticimg = Image.open('staticimages/F-train-w-background.ppm')
+			staticimg = Image.open('staticimages/F+G-train-w-background.ppm')
 			draw = ImageDraw.Draw(staticimg)
 			font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 13)
 			# font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 10)
