@@ -37,12 +37,12 @@ while True:
 			train_times = train_times[:-1]
 
 			# staticimg = Image.open('staticimages/' + stop[0] + stop[3] + '.ppm')
-			staticimg = Image.open('staticimages/F+G-train-w-background.ppm')
+			staticimg = Image.open('staticimages/F+G-train-w-background-black.ppm')
 			draw = ImageDraw.Draw(staticimg)
 			font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 9)
 			# font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 10)
-			draw.text((24, 4), "Manhattan " + train_times, fill=(255,255,255), font=font)
-                        draw.text((24, 19), "Williamsburg " + train_times, fill=(255,255,255), font=font)
+			draw.text((22, 4), "Manhattan " + train_times, fill=(255,255,255), font=font)
+            draw.text((22, 19), "Williamsburg " + train_times, fill=(255,255,255), font=font)
 			staticimg.save('dynamicimages/dynamictime.ppm')
 			departure_times = []
 			train_times = ''
