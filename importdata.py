@@ -41,8 +41,8 @@ while True:
 			draw = ImageDraw.Draw(staticimg)
 			font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 9)
 			# font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 10)
-			draw.text((22, 4), "Manhattan " + train_times, fill=(255,255,255), font=font)
-            draw.text((22, 19), "Williamsburg " + train_times, fill=(255,255,255), font=font)
+			draw.text((20, 4), "Manhattan " + train_times, fill=(255,255,255), font=font)
+                        draw.text((20, 19), "Williamsburg " + train_times, fill=(255,255,255), font=font)
 			staticimg.save('dynamicimages/dynamictime.ppm')
 			departure_times = []
 			train_times = ''
