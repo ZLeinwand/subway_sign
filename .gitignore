@@ -44,3 +44,6 @@ Thumbs.db
 # IDEA #
 ########
 .idea/
+
+
+dynamicimages/*
