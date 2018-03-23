@@ -9,7 +9,7 @@ from config import *
 import traceback
 
 departure_times = []
-train_times = ''
+train_times = []
 
 while True:
 
@@ -26,14 +26,13 @@ while True:
 							departure_time = update.departure.time
 							departure_time = datetime.datetime.fromtimestamp(departure_time)
 							departure_time = math.trunc(((departure_time - current_time).total_seconds()) / 60)
-							departure_times.append("%smin" % departure_time)
+							departure_times.append("%s min" % departure_time)
 			departure_times.sort()
 			for time in departure_times:
 				if time < 0:
 					departure_times.remove(time)
 			for time in departure_times[:NUM_TRAINS]:
-				train_times+=str(time)
-				train_times+=str(',')
+				train_times.append(time)
 			train_times = train_times[:-1]
 
 			# staticimg = Image.open('staticimages/' + stop[0] + stop[3] + '.ppm')
@@ -63,7 +62,7 @@ while True:
 
 			staticimg.save('dynamicimages/dynamictime.ppm')
 			departure_times = []
-			train_times = ''
+			train_times = []
 
 			os.system('sudo ./rpi-rgb-led-matrix/examples-api-use/demo --led-chain=4 -D 1 -m 99999999 dynamicimages/dynamictime.ppm --led-no-hardware-pulse --led-gpio-mapping=adafruit-hat')
 	except Exception:
