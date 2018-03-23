@@ -26,7 +26,7 @@ while True:
 							departure_time = update.departure.time
 							departure_time = datetime.datetime.fromtimestamp(departure_time)
 							departure_time = math.trunc(((departure_time - current_time).total_seconds()) / 60)
-							departure_times.append("%s min" % departure_time)
+							departure_times.append(departure_time)
 			departure_times.sort()
 			for time in departure_times:
 				if time < 0:
@@ -41,7 +41,7 @@ while True:
 			draw = ImageDraw.Draw(staticimg)
 			title_font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 9)
 			time_font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 9)
-			min_text_font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 4)
+			min_text_font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 6)
 
 			# font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 10)
 
@@ -49,7 +49,7 @@ while True:
 			# name of direction
 			draw.text((20, 4), "Manhattan", fill=(255,255,255), font=title_font)
 			# next train time
-			draw.text((50, 4), train_times, fill=(255,255,255), font=time_font)
+			draw.text((50, 4), train_times[0], fill=(255,255,255), font=time_font)
 			# min
 			draw.text((120, 4), "min", fill=(255,255,255), font=min_text_font)
 
@@ -57,7 +57,7 @@ while True:
 			# name of direction
 			draw.text((20, 19), "Williamsburg", fill=(255,255,255), font=title_font)
 			# next train time
-			draw.text((50, 19), train_times, fill=(255,255,255), font=time_font)
+			draw.text((50, 19), train_times[1], fill=(255,255,255), font=time_font)
 			# min
 			draw.text((120, 19), "min", fill=(255,255,255), font=min_text_font)
 
