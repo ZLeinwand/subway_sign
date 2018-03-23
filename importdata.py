@@ -26,7 +26,7 @@ while True:
 							departure_time = update.departure.time
 							departure_time = datetime.datetime.fromtimestamp(departure_time)
 							departure_time = math.trunc(((departure_time - current_time).total_seconds()) / 60)
-							departure_times.append("%s min" % departure_time)
+							departure_times.append("%smin" % departure_time)
 			departure_times.sort()
 			for time in departure_times:
 				if time < 0:
