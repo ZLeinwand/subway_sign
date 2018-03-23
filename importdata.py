@@ -7,6 +7,7 @@ import math
 import os
 from config import *
 import traceback
+import time
 
 departure_times = []
 train_times = []
@@ -65,5 +66,7 @@ while True:
 			train_times = []
 
 			os.system('sudo ./rpi-rgb-led-matrix/examples-api-use/demo --led-chain=4 -D 1 -m 99999999 dynamicimages/dynamictime.ppm --led-no-hardware-pulse --led-gpio-mapping=adafruit-hat')
+			time.sleeep(30)
+
 	except Exception:
 		print traceback.format_exc()
