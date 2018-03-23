@@ -51,7 +51,7 @@ while True:
 		draw.text((20, 4), "Manhattan", fill=(255,255,255), font=title_font)
 		# next train time
 		draw.text((87, 4), str(train_times[0]), fill=(255,255,255), font=time_font)
-		draw.text((95, 4), "min", fill=(255,255,255), font=time_font)
+		draw.text((98, 4), "min", fill=(255,255,255), font=time_font)
 		# min
 		draw.text((118, 2), str(train_times[1]), fill=(255,255,255), font=min_text_font)
 
@@ -60,7 +60,7 @@ while True:
 		draw.text((20, 19), "Williamsburg", fill=(255,255,255), font=title_font)
 		# next train time
 		draw.text((87, 19), str(55), fill=(255,255,255), font=time_font)
-		draw.text((95, 4), "min", fill=(255,255,255), font=time_font)
+		draw.text((98, 19), "min", fill=(255,255,255), font=time_font)
 		# min
 		draw.text((118, 17), str(55), fill=(255,255,255), font=min_text_font)
 
