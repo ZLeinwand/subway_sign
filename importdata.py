@@ -39,10 +39,28 @@ while True:
 			# staticimg = Image.open('staticimages/' + stop[0] + stop[3] + '.ppm')
 			staticimg = Image.open('staticimages/F+G-train-w-background-black.ppm')
 			draw = ImageDraw.Draw(staticimg)
-			font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 9)
+			title_font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 9)
+			time_font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 9)
+			min_text_font = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf', 4)
+
 			# font = ImageFont.truetype('/Library/Fonts/Arial.ttf', 10)
-			draw.text((20, 4), "Manhattan " + train_times, fill=(255,255,255), font=font)
-                        draw.text((20, 19), "Williamsburg " + train_times, fill=(255,255,255), font=font)
+
+			# F train
+			# name of direction
+			draw.text((20, 4), "Manhattan", fill=(255,255,255), font=title_font)
+			# next train time
+			draw.text((50, 4), train_times, fill=(255,255,255), font=time_font)
+			# min
+			draw.text((120, 4), "min", fill=(255,255,255), font=min_text_font)
+
+			# G train
+			# name of direction
+			draw.text((20, 19), "Williamsburg", fill=(255,255,255), font=title_font)
+			# next train time
+			draw.text((50, 19), train_times, fill=(255,255,255), font=time_font)
+			# min
+			draw.text((120, 19), "min", fill=(255,255,255), font=min_text_font)
+
 			staticimg.save('dynamicimages/dynamictime.ppm')
 			departure_times = []
 			train_times = ''
