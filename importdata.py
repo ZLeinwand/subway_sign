@@ -52,7 +52,7 @@ while True:
 		# next train time
 		draw.text((87, 4), ("%s min" % train_times[0]), fill=(255,255,255), font=time_font)
 		# min
-		draw.text((116, 2), str(train_times[1]), fill=(255,255,255), font=min_text_font)
+		draw.text((117, 2), str(train_times[1]), fill=(255,255,255), font=min_text_font)
 
 		# G train
 		# name of direction
@@ -60,7 +60,7 @@ while True:
 		# next train time
 		draw.text((87, 19), ("%s min" % train_times[0]), fill=(255,255,255), font=time_font)
 		# min
-		draw.text((116, 17), str(train_times[1]), fill=(255,255,255), font=min_text_font)
+		draw.text((117, 17), str(train_times[1]), fill=(255,255,255), font=min_text_font)
 
 		staticimg.save('dynamicimages/dynamictime.ppm')
 		departure_times = []
