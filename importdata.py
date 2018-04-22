@@ -7,6 +7,8 @@ import math
 import os
 from config import *
 import traceback
+# need to do this to use the RGBMatrix Library: https://github.com/hzeller/rpi-rgb-led-matrix/tree/master/bindings/python
+from rgbmatrix import RGBMatrix, RGBMatrixOptions
 import time
 # use the import below for debugging this code
 import code
@@ -66,6 +68,8 @@ def draw_sign(f_train_times, g_train_times, fontPath):
 	draw.text((118, 17), str(g_train_times[1]), fill=(255,255,255), font=second_train_font)
 	# create new image to display
 	staticimg.save("dynamicimages/dynamictime.ppm")
+	return staticimg
+
 
 while True:
 
@@ -82,10 +86,39 @@ while True:
 		# draw_sign(f_train_times, g_train_times, "/Library/Fonts/Arial.ttf")
 
 		# use if on RaspberryPi
-		draw_sign(f_train_times, g_train_times, "/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf")
+		image = draw_sign(f_train_times, g_train_times, "/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf")
 
-		os.system("sudo ./rpi-rgb-led-matrix/examples-api-use/demo --led-chain=4 -D 2 -t 20 -m 1000 dynamicimages/dynamictime.ppm --led-no-hardware-pulse --led-gpio-mapping=adafruit-hat")
+		# Configuration for the matrix
+		options = RGBMatrixOptions()
+		options.rows = 32
+		options.chain_length = 1
+		options.parallel = 1
+		options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat' else 'regular'
+
+		matrix = RGBMatrix(options = options)
+
+		# Make image fit our screen.
+		image.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
+
+		matrix.SetImage(image.convert('RGB'))
+		time.sleep(100)
+
+
+		except KeyboardInterrupt:
+			sys.exit(0)
+
+		except Exception:
+			print traceback.format_exc()
+
+		# os.system("sudo ./rpi-rgb-led-matrix/examples-api-use/demo --led-chain=4 -D 2 -t 5 -m 5000 dynamicimages/dynamictime.ppm --led-no-hardware-pulse --led-gpio-mapping=adafruit-hat")
 		# time.sleep(10)
 
-	except Exception:
-		print traceback.format_exc()
+
+
+
+
+
+
+
+
+
