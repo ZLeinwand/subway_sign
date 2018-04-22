@@ -104,11 +104,11 @@ while True:
 		time.sleep(100)
 
 
-		except KeyboardInterrupt:
-			sys.exit(0)
+	except KeyboardInterrupt:
+		sys.exit(0)
 
-		except Exception:
-			print traceback.format_exc()
+	except Exception:
+		print traceback.format_exc()
 
 		# os.system("sudo ./rpi-rgb-led-matrix/examples-api-use/demo --led-chain=4 -D 2 -t 5 -m 5000 dynamicimages/dynamictime.ppm --led-no-hardware-pulse --led-gpio-mapping=adafruit-hat")
 		# time.sleep(10)
