@@ -7,12 +7,12 @@ import math
 import os
 from config import *
 import traceback
+import time
 # need to do this to use the RGBMatrix Library: https://github.com/hzeller/rpi-rgb-led-matrix/tree/master/bindings/python
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
-import time
 # use the import below for debugging this code
 import code
-# put this line anywhere you want to interact with your code via termainal:
+# put this line anywhere you want to interact with your code via terminal:
 # code.interact(local=dict(globals(), **locals()))
 
 def get_train_times(feed_id, stop_id):
