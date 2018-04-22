@@ -84,7 +84,7 @@ while True:
 		# use if on RaspberryPi
 		draw_sign(f_train_times, g_train_times, "/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf")
 
-		os.system("sudo ./rpi-rgb-led-matrix/examples-api-use/demo --led-chain=4 -D 1 -t 1 -m 99999999 dynamicimages/dynamictime.ppm --led-no-hardware-pulse --led-gpio-mapping=adafruit-hat")
+		os.system("sudo ./rpi-rgb-led-matrix/examples-api-use/demo --led-chain=4 -D 1 -t 1 dynamicimages/dynamictime.ppm --led-no-hardware-pulse --led-gpio-mapping=adafruit-hat")
 		time.sleep(3)
 
 	except Exception:
